@@ -1,0 +1,24 @@
+name: StrangeArrows
+version: '1.0'
+main: net.lostslvtt.strangeArrows.StrangeArrows
+api-version: '1.20'
+authors: [ lostslvtt@archlinux ]
+
+commands:
+  getbow:
+    usage: /getbow
+    permission: sarrows.givebow
+
+  getarrow:
+    usage: /getarrow
+    permission: sarrows.givearrow
+
+
+permissions:
+  permission:
+    sarrows.getbow:
+      default: op
+    sarrows.getarrow:
+      default: op
+    sarrow.use:
+      default: op
