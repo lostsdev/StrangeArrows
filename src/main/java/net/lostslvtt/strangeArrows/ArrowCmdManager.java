@@ -43,8 +43,8 @@ public class ArrowCmdManager implements CommandExecutor {
             }
         }
         if (!isCorrectType) {
-            String allTypes = Arrays.stream(StrangeArrows.arrowTypes).collect(Collectors.joining());
-            sender.sendMessage(StrangeArrows.errorText("Invalid type. Choose from " + allTypes));
+            String allTypes = Arrays.stream(StrangeArrows.arrowTypes).map(x -> x + ", ").collect(Collectors.joining());
+            sender.sendMessage(StrangeArrows.errorText("Invalid type. Choose from: " + allTypes));
             return true;
         }
         ItemStack arrow = createArrow(arrowType);

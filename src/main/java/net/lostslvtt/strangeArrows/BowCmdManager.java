@@ -46,8 +46,8 @@ public class BowCmdManager implements CommandExecutor {
             }
         }
         if (!isCorrectType) {
-            String allTypes = Arrays.stream(StrangeArrows.bowTypes).collect(Collectors.joining());
-            sender.sendMessage(StrangeArrows.errorText("Invalid type. Choose from " + allTypes));
+            String allTypes = Arrays.stream(StrangeArrows.bowTypes).map(x -> x + ", ").collect(Collectors.joining());
+            sender.sendMessage(StrangeArrows.errorText("Invalid type. Choose from: " + allTypes));
             return true;
         }
         ItemStack bow = createBow(bowType);

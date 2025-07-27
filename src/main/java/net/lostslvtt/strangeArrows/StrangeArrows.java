@@ -17,8 +17,8 @@ public final class StrangeArrows extends JavaPlugin {
         return returning.toString();
     }
 
-    public static String[] bowTypes = new String[]{ "SneezeBow", "EnchantBow", "ExplosionBow", "FireExplosionBow", "WaterBow", "FatigueBow", "SculkBow" };
-    public static String[] arrowTypes = new String[]{ "SneezeArrow", "EnchantArrow", "ExplosionArrow", "FireExplosionArrow", "WaterArrow", "FatigueArrow", "SculkArrow" };
+    public static String[] bowTypes = new String[]{ "SneezeBow", "ExplosionBow", "FireExplosionBow", "WaterBow", "FatigueBow", "SculkBow", "KnockBackBow" };
+    public static String[] arrowTypes = new String[]{ "SneezeArrow", "ExplosionArrow", "FireExplosionArrow", "WaterArrow", "FatigueArrow", "SculkArrow", "KnockBackArrow" };
     public static Component orangeText(String arg) {
         return MiniMessage.miniMessage().deserialize("<color:#ffba7d>"+arg+"</color>");
     }

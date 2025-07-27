@@ -55,9 +55,6 @@ public class SAListener implements Listener {
         if (type.equalsIgnoreCase("sneezearrow")) {
             toSpawnParticle.setY(toSpawnParticle.getY()+1);
             shootedAt.getWorld().spawnParticle(Particle.SNEEZE, toSpawnParticle, 10);
-        } else if (type.equalsIgnoreCase("enchantarrow")) {
-            toSpawnParticle.setY(toSpawnParticle.getY()+1);
-            shootedAt.getWorld().spawnParticle(Particle.ENCHANTMENT_TABLE, toSpawnParticle, 20);
         } else if (type.equalsIgnoreCase("explosionarrow")) {
             toSpawnParticle.setY(toSpawnParticle.getY()+1);
             shootedAt.getWorld().createExplosion(toSpawnParticle, 2, false);
@@ -76,6 +73,10 @@ public class SAListener implements Listener {
             if (!(shootedAt instanceof Player)) return;
             Player shootedAtPlayer = (Player) shootedAt;
             shootedAtPlayer.addPotionEffect(PotionEffectType.SLOW.createEffect(100, 4));
+            toSpawnParticle.setY(toSpawnParticle.getY()+1);
+            shootedAt.getWorld().spawnParticle(Particle.SCULK_SOUL, toSpawnParticle, 10);
+        } else if (type.equalsIgnoreCase("knockbackarrow")) {
+            shootedAt.setVelocity(shootedAt.getVelocity().multiply(2));
             toSpawnParticle.setY(toSpawnParticle.getY()+1);
             shootedAt.getWorld().spawnParticle(Particle.SCULK_SOUL, toSpawnParticle, 10);
         }
