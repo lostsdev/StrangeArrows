@@ -9,21 +9,43 @@ public final class StrangeArrows extends JavaPlugin {
 
     public static String convertBowTypeToArrowType(String type) {
         StringBuilder returning = new StringBuilder(type);
-        returning.deleteCharAt(type.length()-1);
-        returning.deleteCharAt(type.length()-2);
-        returning.deleteCharAt(type.length()-3);
+        returning.deleteCharAt(type.length() - 1);
+        returning.deleteCharAt(type.length() - 2);
+        returning.deleteCharAt(type.length() - 3);
         returning.append("Arrow");
-		
+
         return returning.toString();
     }
 
-    public static String[] bowTypes = new String[]{ "SneezeBow", "ExplosionBow", "FireExplosionBow", "WaterBow", "FatigueBow", "SculkBow", "KnockBackBow" };
-    public static String[] arrowTypes = new String[]{ "SneezeArrow", "ExplosionArrow", "FireExplosionArrow", "WaterArrow", "FatigueArrow", "SculkArrow", "KnockBackArrow" };
+    public static String[] bowTypes = new String[] {
+        "SneezeBow",
+        "ExplosionBow",
+        "FireExplosionBow",
+        "WaterBow",
+        "FatigueBow",
+        "SculkBow",
+        "KnockBackBow",
+    };
+    public static String[] arrowTypes = new String[] {
+        "SneezeArrow",
+        "ExplosionArrow",
+        "FireExplosionArrow",
+        "WaterArrow",
+        "FatigueArrow",
+        "SculkArrow",
+        "KnockBackArrow",
+    };
+
     public static Component orangeText(String arg) {
-        return MiniMessage.miniMessage().deserialize("<color:#ffba7d>"+arg+"</color>");
+        return MiniMessage.miniMessage().deserialize(
+            "<color:#ffba7d>" + arg + "</color>"
+        );
     }
+
     public static Component errorText(String arg) {
-        return MiniMessage.miniMessage().deserialize("<color:#ff8f66>"+arg+"</color>");
+        return MiniMessage.miniMessage().deserialize(
+            "<color:#ff8f66>" + arg + "</color>"
+        );
     }
 
     @Override
@@ -32,7 +54,9 @@ public final class StrangeArrows extends JavaPlugin {
         Bukkit.getPluginCommand("getbow").setExecutor(new BowCmdManager());
         Bukkit.getPluginCommand("getbow").setTabCompleter(new BowComplete());
         Bukkit.getPluginCommand("getarrow").setExecutor(new ArrowCmdManager());
-        Bukkit.getPluginCommand("getarrow").setTabCompleter(new ArrowComplete());
+        Bukkit.getPluginCommand("getarrow").setTabCompleter(
+            new ArrowComplete()
+        );
     }
 
     @Override
